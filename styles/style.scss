@@ -18,6 +18,7 @@
 
 body {
   font-family: "Gilroy";
+  font-size: 18px;
 }
 //----Constants-------------
 $text-color1: #828282;
@@ -27,34 +28,157 @@ $background-color2: #e5e5e5;
 //---------------------------
 
 .wrapper {
-  overflow: hidden;
+  overflow-x: hidden;
   display: flex;
   flex-direction: column;
   height: 100%;
 }
 .container {
-  max-width: 945;
+  max-width: 965px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
+//---------Header section----------------------------------------
 .header {
   &__container {
+    margin: 90px auto 30px auto;
   }
 
   &__menu {
+    margin-bottom: 30px;
+  }
+  &__border {
+    border: 1px solid $text-color1;
+  }
+}
+.menu {
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  &__item {
+    color: $text-color1;
+    &_blacked {
+      color: $text-color2;
+    }
+  }
+}
+//--------------------------------------------------------------------------
+
+// --------Page one---------------------------------------------------------
+.main {
+  flex: 1 1 auto;
+  .page-one {
+    &__container {
+      display: flex;
+      flex-direction: column;
+      padding: 0 10px;
+      margin-bottom: 105px;
+      .container__text {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 30px;
+      }
+    }
+
+    &__heading {
+      max-width: 123px;
+      color: $text-color2;
+      font-size: 47px;
+      line-height: 58px;
+      font-weight: 700;
+    }
+
+    &__text {
+      max-width: 155px;
+      color: $text-color2;
+    }
+
+    &__lang-selector {
+      display: flex;
+      transform: rotate(90deg);
+      .ru {
+      }
+      .ENG {
+      }
+    }
+
+    &__image img {
+      max-width: 100%;
+    }
+  }
+  .container {
+  }
+}
+//------------------------------------------------------------------
+
+//-------------------Page two---------------------------------------
+.page-two {
+  background-color: $background-color1;
+  &__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 110px;
+  }
+
+  &__title {
+    font-weight: 700;
+    font-size: 34px;
+    line-height: 42px;
+    margin: 150px 0 35px 0;
+  }
+
+  &__text {
+    margin: 0 auto;
+    max-width: 485px;
+    text-align: center;
+    margin-bottom: 90px;
+  }
+  .text {
+    &-one {
+      margin-bottom: 50px;
+    }
+    &-two {
+      padding: 0 45px;
+      margin-bottom: 50px;
+    }
+    &-three {
+      padding: 5px 80px;
+      margin-bottom: 5px;
+    }
+  }
+}
+//----------Page three---------------------------------------------
+.page-three {
+  &__container {
+  }
+
+  &__title {
+  }
+
+  &__text {
+  }
+
+  &__list {
   }
 }
 .container {
 }
-.menu {
-  &__list {
-  }
-
+.list {
   &__item {
   }
 }
-.main {
-  flex: 1 1 auto;
-}
+
+//-----------------------------------------------------------------
+
+//----------Footer-------------------------------------------------
 .footer {
   flex: 0 0 auto;
 }
+//------------------------------------------------------------------
