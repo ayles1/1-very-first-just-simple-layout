@@ -1,0 +1,60 @@
+@font-face {
+  font-family: "Gilroy";
+  font-style: normal;
+  font-weight: 500;
+  src: url(/fonts/Gilroy-Medium/Gilroy-Medium.ttf) format("truetype");
+  src: url(/fonts/Gilroy-Medium/Gilroy-Medium.woff) format("woff");
+  src: url(/fonts/Gilroy-Medium/Gilroy-Medium.woff2) format("woff2");
+}
+
+@font-face {
+  font-family: "Gilroy";
+  font-style: normal;
+  font-weight: 700;
+  src: url(/fonts/Gilroy-Bold/Gilroy-Bold.ttf) format("truetype");
+  src: url(/fonts/Gilroy-Bold/Gilroy-Bold.woff) format("woff");
+  src: url(/fonts/Gilroy-Bold/Gilroy-Bold.woff2) format("woff2");
+}
+
+body {
+  font-family: "Gilroy";
+}
+//----Constants-------------
+$text-color1: #828282;
+$text-color2: #070707;
+$background-color1: #f6f6f6;
+$background-color2: #e5e5e5;
+//---------------------------
+
+.wrapper {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.container {
+  max-width: 945;
+}
+
+.header {
+  &__container {
+  }
+
+  &__menu {
+  }
+}
+.container {
+}
+.menu {
+  &__list {
+  }
+
+  &__item {
+  }
+}
+.main {
+  flex: 1 1 auto;
+}
+.footer {
+  flex: 0 0 auto;
+}
