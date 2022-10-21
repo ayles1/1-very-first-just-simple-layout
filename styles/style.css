@@ -24,6 +24,7 @@ body {
   display: flex;
   flex-direction: column;
   height: 100%;
+  position: relative;
 }
 
 .container {
@@ -352,6 +353,53 @@ body {
   text-decoration: underline;
 }
 
+.page-five__container {
+  padding: 115px 0 0 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.page-five__title {
+  margin-bottom: 40px;
+  font-weight: 700;
+  font-size: 34px;
+  line-height: 42px;
+  color: #070707;
+}
+.page-five__text {
+  margin-bottom: 40px;
+  color: #070707;
+}
+.page-five__button {
+  margin-bottom: 90px;
+  padding: 13px 30px;
+  background-color: #070707;
+  border-radius: 12px;
+  text-align: center;
+}
+.page-five__button__text {
+  color: white;
+}
+.page-five__socials {
+  display: flex;
+  gap: 50px;
+  margin-bottom: 40px;
+}
+.page-five__call-to-action {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 120px;
+}
+.page-five__call-to-action span {
+  font-size: 14px;
+  color: #828282;
+}
+
 .footer {
   flex: 0 0 auto;
+  position: fixed;
+  bottom: 0%;
+  left: 0%;
+  width: 100%;
 }/*# sourceMappingURL=style.css.map */

@@ -19,6 +19,13 @@ menuItemPortfolio.onclick = function () {
   scrollTargetPortfolio.scrollIntoView({ block: "start", behavior: "smooth" });
 };
 
+const menuItemContacts = document.querySelectorAll(".menu__item")[3];
+const scrollTargetContacts = document.querySelector(".page-five");
+
+menuItemContacts.onclick = function () {
+  scrollTargetContacts.scrollIntoView({ block: "start", behavior: "smooth" });
+};
+
 //Burger script---------------------------------------------------
 const hamb = document.querySelector("#hamb");
 const popup = document.querySelector("#popup");
