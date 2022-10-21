@@ -68,6 +68,158 @@ $background-color2: #e5e5e5;
 }
 //--------------------------------------------------------------------------
 
+//---------Burger menu------------------------------------------------------
+.navbar {
+  position: fixed;
+  top: 0%;
+  right: 0%;
+  height: 75px;
+  width: 100%;
+
+  &__wrap {
+    display: flex;
+    justify-content: end;
+    height: 100%;
+
+    .menu {
+      display: flex;
+    }
+    .menu > li {
+      display: flex;
+      align-items: stretch;
+    }
+    .menu > li > button {
+      &:hover {
+        color: rgba(0, 0, 0, 1);
+      }
+      display: flex;
+      align-items: center;
+      padding: 0 20px;
+      color: rgba(0, 0, 0, 0.7);
+    }
+  }
+}
+.hamb {
+  display: none;
+  &__container {
+    width: 100%;
+    height: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  &__field {
+  }
+}
+.bar {
+}
+.logo {
+  text-decoration: none;
+  color: black;
+  display: flex;
+  align-items: center;
+}
+.menu > li > button {
+  text-decoration: none;
+}
+.popup {
+  display: none;
+}
+//------Burger media query--------------------------------------------------
+@media (max-width: 1000px) {
+  .header {
+    display: none;
+  }
+
+  .navbar__wrap .menu {
+    display: none;
+  }
+
+  .hamb {
+    display: flex;
+    align-items: center;
+  }
+
+  .hamb__field {
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+
+  .bar {
+    display: block;
+    width: 30px;
+    height: 3px;
+    margin: 6px auto;
+    background-color: $text-color2;
+    transition: 0.2s;
+  }
+
+  .popup {
+    position: fixed;
+    top: 75px;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background-color: $background-color1;
+    z-index: 100;
+    display: flex;
+  }
+
+  .popup.open {
+    left: 0;
+  }
+
+  .popup .menu {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    padding: 50px 0;
+    overflow: auto;
+  }
+
+  .popup .menu > li {
+    width: 100%;
+  }
+
+  .popup .menu > li > button {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 20px 0;
+    font-size: 20px;
+    font-weight: bold;
+    color: $text-color2;
+  }
+
+  .popup .menu > li > button:hover {
+    background-color: rgba(122, 82, 179, 0.1);
+  }
+
+  .hamb__field.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamb__field.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+
+  .hamb__field.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+
+  body.noscroll {
+    overflow: hidden;
+  }
+  .opened {
+    background-color: $background-color1;
+    transition: 0.3s;
+  }
+}
+//--------------------------------------------------------------------------
+
 // --------Page one---------------------------------------------------------
 .main {
   flex: 1 1 auto;
@@ -102,6 +254,7 @@ $background-color2: #e5e5e5;
     &__lang-selector {
       display: flex;
       transform: rotate(90deg);
+      gap: 10px;
       .ru {
       }
       .ENG {
@@ -116,7 +269,28 @@ $background-color2: #e5e5e5;
   }
 }
 //------------------------------------------------------------------
-
+//-----------------Page one media query-----------------------------
+@media (max-width: 1000px) {
+  .page-one__lang-selector {
+    display: none;
+    visibility: hidden;
+  }
+}
+@media (max-width: 767px) {
+  .main .page-one__container .container__text {
+    flex-direction: column;
+    align-items: flex-start;
+    padding-left: 15px;
+  }
+  .page-one__heading {
+    margin-bottom: 40px;
+  }
+  .page-one__lang-selector {
+    display: none;
+    visibility: hidden;
+  }
+}
+//------------------------------------------------------------------
 //-------------------Page two---------------------------------------
 .page-two {
   background-color: $background-color1;
@@ -124,7 +298,6 @@ $background-color2: #e5e5e5;
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: 110px;
   }
 
   &__title {
@@ -156,27 +329,105 @@ $background-color2: #e5e5e5;
 }
 //----------Page three---------------------------------------------
 .page-three {
+  padding: 90px 0 0 0;
   &__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 110px;
   }
 
   &__title {
+    margin-bottom: 70px;
+    font-size: 34px;
+    line-height: 42px;
+    font-weight: 700;
+    color: $text-color2;
   }
 
   &__text {
+    margin-bottom: 90px;
+
+    color: $text-color2;
   }
 
   &__list {
+    display: flex;
+    gap: 30px;
+    width: 100%;
+    justify-content: space-between;
+    flex-wrap: wrap;
   }
-}
-.container {
 }
 .list {
   &__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    &__image {
+      margin-bottom: 25px;
+    }
+    &__text {
+      margin-bottom: 40px;
+      font-weight: 700;
+      font-size: 14px;
+      color: $text-color1;
+    }
+    &__rating {
+    }
   }
 }
 
 //-----------------------------------------------------------------
+//----------------Page three media query---------------------------
+@media (max-width: 575px) {
+  .page-three__list {
+    flex-direction: column;
+  }
+}
+//-----------------------------------------------------------------
+//---------------Page four ----------------------------------------
+.page-four {
+  background-color: $background-color1;
+  padding: 110px 0 0 0;
+  &__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 
+  &__title {
+    font-weight: 700;
+    color: $text-color2;
+    font-size: 34px;
+    line-height: 42px;
+    margin-bottom: 50px;
+  }
+
+  &__portfolio {
+  }
+}
+
+.portfolio {
+  &__element {
+    margin-bottom: 110px;
+    &__image {
+      margin-bottom: 50px;
+      & img {
+        width: 100%;
+      }
+    }
+    &__description {
+      text-align: center;
+      &__link {
+        color: $text-color2;
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+//-----------------------------------------------------------------
 //----------Footer-------------------------------------------------
 .footer {
   flex: 0 0 auto;
